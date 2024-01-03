@@ -22,15 +22,10 @@ nginx
 
 # Start the server
 cd /app/libs
-echo "Property file: $CONFIG_PROP"
-echo $CONFIG_PROP
 export config_file=
 
-if [ -z "$CONFIG_PROP" ];
+if [ -n "$CONFIG_PROP" ];
   then
-    echo "Using default configuration file";
-    export config_file=/app/config/config.properties
-  else
     echo "Using '$CONFIG_PROP'";
     export config_file=/app/config/$CONFIG_PROP
 fi
