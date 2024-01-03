@@ -71,9 +71,6 @@
         "com.netflix.conductor:conductor-workflow-event-listener": {
             "project": true
         },
-        "io.orkes.queues:orkes-conductor-queues": {
-            "locked": "1.0.7"
-        },
         "org.apache.logging.log4j:log4j-api": {
             "locked": "2.20.0"
         },
@@ -141,7 +138,9 @@
         },
         "com.fasterxml.jackson.core:jackson-annotations": {
             "firstLevelTransitive": [
-                "com.netflix.conductor:conductor-core"
+                "com.netflix.conductor:conductor-core",
+                "com.netflix.conductor:conductor-grpc",
+                "com.netflix.conductor:conductor-grpc-server"
             ],
             "locked": "2.15.2"
         },
@@ -151,6 +150,8 @@
                 "com.netflix.conductor:conductor-common-persistence",
                 "com.netflix.conductor:conductor-core",
                 "com.netflix.conductor:conductor-es7-persistence",
+                "com.netflix.conductor:conductor-grpc",
+                "com.netflix.conductor:conductor-grpc-server",
                 "com.netflix.conductor:conductor-mysql-persistence",
                 "com.netflix.conductor:conductor-postgres-persistence"
             ],
@@ -162,6 +163,8 @@
                 "com.netflix.conductor:conductor-common-persistence",
                 "com.netflix.conductor:conductor-core",
                 "com.netflix.conductor:conductor-es7-persistence",
+                "com.netflix.conductor:conductor-grpc",
+                "com.netflix.conductor:conductor-grpc-server",
                 "com.netflix.conductor:conductor-mysql-persistence",
                 "com.netflix.conductor:conductor-postgres-persistence"
             ],
@@ -459,9 +462,6 @@
                 "com.netflix.conductor:conductor-nats-streaming"
             ],
             "locked": "2.15.6"
-        },
-        "io.orkes.queues:orkes-conductor-queues": {
-            "locked": "1.0.7"
         },
         "io.prometheus:simpleclient": {
             "firstLevelTransitive": [
@@ -851,7 +851,9 @@
         },
         "com.fasterxml.jackson.core:jackson-annotations": {
             "firstLevelTransitive": [
-                "com.netflix.conductor:conductor-core"
+                "com.netflix.conductor:conductor-core",
+                "com.netflix.conductor:conductor-grpc",
+                "com.netflix.conductor:conductor-grpc-server"
             ],
             "locked": "2.15.2"
         },
@@ -861,6 +863,8 @@
                 "com.netflix.conductor:conductor-common-persistence",
                 "com.netflix.conductor:conductor-core",
                 "com.netflix.conductor:conductor-es7-persistence",
+                "com.netflix.conductor:conductor-grpc",
+                "com.netflix.conductor:conductor-grpc-server",
                 "com.netflix.conductor:conductor-mysql-persistence",
                 "com.netflix.conductor:conductor-postgres-persistence"
             ],
@@ -872,6 +876,8 @@
                 "com.netflix.conductor:conductor-common-persistence",
                 "com.netflix.conductor:conductor-core",
                 "com.netflix.conductor:conductor-es7-persistence",
+                "com.netflix.conductor:conductor-grpc",
+                "com.netflix.conductor:conductor-grpc-server",
                 "com.netflix.conductor:conductor-mysql-persistence",
                 "com.netflix.conductor:conductor-postgres-persistence"
             ],
@@ -1169,9 +1175,6 @@
                 "com.netflix.conductor:conductor-nats-streaming"
             ],
             "locked": "2.15.6"
-        },
-        "io.orkes.queues:orkes-conductor-queues": {
-            "locked": "1.0.7"
         },
         "io.prometheus:simpleclient": {
             "firstLevelTransitive": [
@@ -1616,9 +1619,6 @@
         "io.grpc:grpc-testing": {
             "locked": "1.57.2"
         },
-        "io.orkes.queues:orkes-conductor-queues": {
-            "locked": "1.0.7"
-        },
         "junit:junit": {
             "locked": "4.13.2"
         },
@@ -1695,7 +1695,9 @@
         },
         "com.fasterxml.jackson.core:jackson-annotations": {
             "firstLevelTransitive": [
-                "com.netflix.conductor:conductor-core"
+                "com.netflix.conductor:conductor-core",
+                "com.netflix.conductor:conductor-grpc",
+                "com.netflix.conductor:conductor-grpc-server"
             ],
             "locked": "2.15.2"
         },
@@ -1705,6 +1707,8 @@
                 "com.netflix.conductor:conductor-common-persistence",
                 "com.netflix.conductor:conductor-core",
                 "com.netflix.conductor:conductor-es7-persistence",
+                "com.netflix.conductor:conductor-grpc",
+                "com.netflix.conductor:conductor-grpc-server",
                 "com.netflix.conductor:conductor-mysql-persistence",
                 "com.netflix.conductor:conductor-postgres-persistence"
             ],
@@ -1716,6 +1720,8 @@
                 "com.netflix.conductor:conductor-common-persistence",
                 "com.netflix.conductor:conductor-core",
                 "com.netflix.conductor:conductor-es7-persistence",
+                "com.netflix.conductor:conductor-grpc",
+                "com.netflix.conductor:conductor-grpc-server",
                 "com.netflix.conductor:conductor-mysql-persistence",
                 "com.netflix.conductor:conductor-postgres-persistence"
             ],
@@ -2016,9 +2022,6 @@
                 "com.netflix.conductor:conductor-nats-streaming"
             ],
             "locked": "2.15.6"
-        },
-        "io.orkes.queues:orkes-conductor-queues": {
-            "locked": "1.0.7"
         },
         "io.prometheus:simpleclient": {
             "firstLevelTransitive": [
