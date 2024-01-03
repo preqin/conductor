@@ -47,7 +47,13 @@
             "firstLevelTransitive": [
                 "com.netflix.conductor:conductor-client"
             ],
-            "locked": "1.11.86"
+            "locked": "1.11.1034"
+        },
+        "com.amazonaws:aws-java-sdk-sts": {
+            "firstLevelTransitive": [
+                "com.netflix.conductor:conductor-client"
+            ],
+            "locked": "1.11.1034"
         },
         "com.fasterxml.jackson.core:jackson-core": {
             "firstLevelTransitive": [
@@ -222,6 +228,12 @@
                 "com.netflix.conductor:conductor-client"
             ],
             "locked": "2.0.9"
+        },
+        "org.springdoc:springdoc-openapi-starter-webmvc-ui": {
+            "firstLevelTransitive": [
+                "com.netflix.conductor:conductor-common"
+            ],
+            "locked": "2.1.0"
         },
         "org.springframework.boot:spring-boot-starter": {
             "locked": "3.1.4"
@@ -282,7 +294,13 @@
             "firstLevelTransitive": [
                 "com.netflix.conductor:conductor-client"
             ],
-            "locked": "1.11.86"
+            "locked": "1.11.1034"
+        },
+        "com.amazonaws:aws-java-sdk-sts": {
+            "firstLevelTransitive": [
+                "com.netflix.conductor:conductor-client"
+            ],
+            "locked": "1.11.1034"
         },
         "com.fasterxml.jackson.core:jackson-core": {
             "firstLevelTransitive": [
@@ -463,6 +481,12 @@
                 "com.netflix.conductor:conductor-client"
             ],
             "locked": "2.0.9"
+        },
+        "org.springdoc:springdoc-openapi-starter-webmvc-ui": {
+            "firstLevelTransitive": [
+                "com.netflix.conductor:conductor-common"
+            ],
+            "locked": "2.1.0"
         },
         "org.springframework.boot:spring-boot-starter": {
             "locked": "3.1.4"

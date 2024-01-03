@@ -116,13 +116,20 @@
             "firstLevelTransitive": [
                 "com.netflix.conductor:conductor-awss3-storage"
             ],
-            "locked": "1.11.86"
+            "locked": "1.11.1034"
         },
         "com.amazonaws:aws-java-sdk-sqs": {
             "firstLevelTransitive": [
                 "com.netflix.conductor:conductor-awssqs-event-queue"
             ],
-            "locked": "1.11.86"
+            "locked": "1.11.1034"
+        },
+        "com.amazonaws:aws-java-sdk-sts": {
+            "firstLevelTransitive": [
+                "com.netflix.conductor:conductor-awss3-storage",
+                "com.netflix.conductor:conductor-awssqs-event-queue"
+            ],
+            "locked": "1.11.1034"
         },
         "com.azure:azure-storage-blob": {
             "firstLevelTransitive": [
@@ -829,13 +836,20 @@
             "firstLevelTransitive": [
                 "com.netflix.conductor:conductor-awss3-storage"
             ],
-            "locked": "1.11.86"
+            "locked": "1.11.1034"
         },
         "com.amazonaws:aws-java-sdk-sqs": {
             "firstLevelTransitive": [
                 "com.netflix.conductor:conductor-awssqs-event-queue"
             ],
-            "locked": "1.11.86"
+            "locked": "1.11.1034"
+        },
+        "com.amazonaws:aws-java-sdk-sts": {
+            "firstLevelTransitive": [
+                "com.netflix.conductor:conductor-awss3-storage",
+                "com.netflix.conductor:conductor-awssqs-event-queue"
+            ],
+            "locked": "1.11.1034"
         },
         "com.azure:azure-storage-blob": {
             "firstLevelTransitive": [
@@ -1673,13 +1687,20 @@
             "firstLevelTransitive": [
                 "com.netflix.conductor:conductor-awss3-storage"
             ],
-            "locked": "1.11.86"
+            "locked": "1.11.1034"
         },
         "com.amazonaws:aws-java-sdk-sqs": {
             "firstLevelTransitive": [
                 "com.netflix.conductor:conductor-awssqs-event-queue"
             ],
-            "locked": "1.11.86"
+            "locked": "1.11.1034"
+        },
+        "com.amazonaws:aws-java-sdk-sts": {
+            "firstLevelTransitive": [
+                "com.netflix.conductor:conductor-awss3-storage",
+                "com.netflix.conductor:conductor-awssqs-event-queue"
+            ],
+            "locked": "1.11.1034"
         },
         "com.azure:azure-storage-blob": {
             "firstLevelTransitive": [

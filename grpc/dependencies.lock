@@ -5,6 +5,15 @@
         }
     },
     "compileClasspath": {
+        "com.fasterxml.jackson.core:jackson-annotations": {
+            "locked": "2.15.2"
+        },
+        "com.fasterxml.jackson.core:jackson-core": {
+            "locked": "2.15.2"
+        },
+        "com.fasterxml.jackson.core:jackson-databind": {
+            "locked": "2.15.2"
+        },
         "com.google.protobuf:protobuf-java": {
             "locked": "3.21.12"
         },
@@ -40,6 +49,9 @@
         }
     },
     "compileProtoPath": {
+        "com.fasterxml.jackson.core:jackson-annotations": {
+            "locked": "2.15.2"
+        },
         "com.fasterxml.jackson.core:jackson-core": {
             "firstLevelTransitive": [
                 "com.netflix.conductor:conductor-common"
@@ -131,6 +143,12 @@
                 "com.netflix.conductor:conductor-common"
             ],
             "locked": "2.20.0"
+        },
+        "org.springdoc:springdoc-openapi-starter-webmvc-ui": {
+            "firstLevelTransitive": [
+                "com.netflix.conductor:conductor-common"
+            ],
+            "locked": "2.1.0"
         }
     },
     "protobufToolsLocator_grpc": {
@@ -140,10 +158,13 @@
     },
     "protobufToolsLocator_protoc": {
         "com.google.protobuf:protoc": {
-            "locked": "3.14.0"
+            "locked": "3.21.12"
         }
     },
     "runtimeClasspath": {
+        "com.fasterxml.jackson.core:jackson-annotations": {
+            "locked": "2.15.2"
+        },
         "com.fasterxml.jackson.core:jackson-core": {
             "firstLevelTransitive": [
                 "com.netflix.conductor:conductor-common"
@@ -235,9 +256,24 @@
                 "com.netflix.conductor:conductor-common"
             ],
             "locked": "2.20.0"
+        },
+        "org.springdoc:springdoc-openapi-starter-webmvc-ui": {
+            "firstLevelTransitive": [
+                "com.netflix.conductor:conductor-common"
+            ],
+            "locked": "2.1.0"
         }
     },
     "testCompileClasspath": {
+        "com.fasterxml.jackson.core:jackson-annotations": {
+            "locked": "2.15.2"
+        },
+        "com.fasterxml.jackson.core:jackson-core": {
+            "locked": "2.15.2"
+        },
+        "com.fasterxml.jackson.core:jackson-databind": {
+            "locked": "2.15.2"
+        },
         "com.google.protobuf:protobuf-java": {
             "locked": "3.21.12"
         },
@@ -285,6 +321,9 @@
         }
     },
     "testCompileProtoPath": {
+        "com.fasterxml.jackson.core:jackson-annotations": {
+            "locked": "2.15.2"
+        },
         "com.fasterxml.jackson.core:jackson-core": {
             "firstLevelTransitive": [
                 "com.netflix.conductor:conductor-common"
@@ -382,6 +421,12 @@
         },
         "org.junit.vintage:junit-vintage-engine": {
             "locked": "5.9.3"
+        },
+        "org.springdoc:springdoc-openapi-starter-webmvc-ui": {
+            "firstLevelTransitive": [
+                "com.netflix.conductor:conductor-common"
+            ],
+            "locked": "2.1.0"
         },
         "org.springframework.boot:spring-boot-starter-log4j2": {
             "locked": "3.1.4"
@@ -391,6 +436,9 @@
         }
     },
     "testRuntimeClasspath": {
+        "com.fasterxml.jackson.core:jackson-annotations": {
+            "locked": "2.15.2"
+        },
         "com.fasterxml.jackson.core:jackson-core": {
             "firstLevelTransitive": [
                 "com.netflix.conductor:conductor-common"
@@ -488,6 +536,12 @@
         },
         "org.junit.vintage:junit-vintage-engine": {
             "locked": "5.9.3"
+        },
+        "org.springdoc:springdoc-openapi-starter-webmvc-ui": {
+            "firstLevelTransitive": [
+                "com.netflix.conductor:conductor-common"
+            ],
+            "locked": "2.1.0"
         },
         "org.springframework.boot:spring-boot-starter-log4j2": {
             "locked": "3.1.4"

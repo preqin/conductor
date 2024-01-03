@@ -5,6 +5,15 @@
         }
     },
     "compileClasspath": {
+        "com.fasterxml.jackson.core:jackson-annotations": {
+            "locked": "2.15.2"
+        },
+        "com.fasterxml.jackson.core:jackson-core": {
+            "locked": "2.15.2"
+        },
+        "com.fasterxml.jackson.core:jackson-databind": {
+            "locked": "2.15.2"
+        },
         "com.netflix.conductor:conductor-common": {
             "project": true
         },
@@ -48,21 +57,24 @@
     "runtimeClasspath": {
         "com.fasterxml.jackson.core:jackson-annotations": {
             "firstLevelTransitive": [
-                "com.netflix.conductor:conductor-core"
+                "com.netflix.conductor:conductor-core",
+                "com.netflix.conductor:conductor-grpc"
             ],
             "locked": "2.15.2"
         },
         "com.fasterxml.jackson.core:jackson-core": {
             "firstLevelTransitive": [
                 "com.netflix.conductor:conductor-common",
-                "com.netflix.conductor:conductor-core"
+                "com.netflix.conductor:conductor-core",
+                "com.netflix.conductor:conductor-grpc"
             ],
             "locked": "2.15.2"
         },
         "com.fasterxml.jackson.core:jackson-databind": {
             "firstLevelTransitive": [
                 "com.netflix.conductor:conductor-common",
-                "com.netflix.conductor:conductor-core"
+                "com.netflix.conductor:conductor-core",
+                "com.netflix.conductor:conductor-grpc"
             ],
             "locked": "2.15.2"
         },
@@ -241,9 +253,24 @@
                 "com.netflix.conductor:conductor-core"
             ],
             "locked": "15.4"
+        },
+        "org.springdoc:springdoc-openapi-starter-webmvc-ui": {
+            "firstLevelTransitive": [
+                "com.netflix.conductor:conductor-common"
+            ],
+            "locked": "2.1.0"
         }
     },
     "testCompileClasspath": {
+        "com.fasterxml.jackson.core:jackson-annotations": {
+            "locked": "2.15.2"
+        },
+        "com.fasterxml.jackson.core:jackson-core": {
+            "locked": "2.15.2"
+        },
+        "com.fasterxml.jackson.core:jackson-databind": {
+            "locked": "2.15.2"
+        },
         "com.netflix.conductor:conductor-common": {
             "project": true
         },
@@ -302,21 +329,24 @@
     "testRuntimeClasspath": {
         "com.fasterxml.jackson.core:jackson-annotations": {
             "firstLevelTransitive": [
-                "com.netflix.conductor:conductor-core"
+                "com.netflix.conductor:conductor-core",
+                "com.netflix.conductor:conductor-grpc"
             ],
             "locked": "2.15.2"
         },
         "com.fasterxml.jackson.core:jackson-core": {
             "firstLevelTransitive": [
                 "com.netflix.conductor:conductor-common",
-                "com.netflix.conductor:conductor-core"
+                "com.netflix.conductor:conductor-core",
+                "com.netflix.conductor:conductor-grpc"
             ],
             "locked": "2.15.2"
         },
         "com.fasterxml.jackson.core:jackson-databind": {
             "firstLevelTransitive": [
                 "com.netflix.conductor:conductor-common",
-                "com.netflix.conductor:conductor-core"
+                "com.netflix.conductor:conductor-core",
+                "com.netflix.conductor:conductor-grpc"
             ],
             "locked": "2.15.2"
         },
@@ -504,6 +534,12 @@
                 "com.netflix.conductor:conductor-core"
             ],
             "locked": "15.4"
+        },
+        "org.springdoc:springdoc-openapi-starter-webmvc-ui": {
+            "firstLevelTransitive": [
+                "com.netflix.conductor:conductor-common"
+            ],
+            "locked": "2.1.0"
         },
         "org.springframework.boot:spring-boot-starter-log4j2": {
             "locked": "3.1.4"

@@ -333,19 +333,27 @@
             "firstLevelTransitive": [
                 "com.netflix.conductor:conductor-client"
             ],
-            "locked": "1.11.86"
+            "locked": "1.11.1034"
         },
         "com.amazonaws:aws-java-sdk-s3": {
             "firstLevelTransitive": [
                 "com.netflix.conductor:conductor-awss3-storage"
             ],
-            "locked": "1.11.86"
+            "locked": "1.11.1034"
         },
         "com.amazonaws:aws-java-sdk-sqs": {
             "firstLevelTransitive": [
                 "com.netflix.conductor:conductor-awssqs-event-queue"
             ],
-            "locked": "1.11.86"
+            "locked": "1.11.1034"
+        },
+        "com.amazonaws:aws-java-sdk-sts": {
+            "firstLevelTransitive": [
+                "com.netflix.conductor:conductor-awss3-storage",
+                "com.netflix.conductor:conductor-awssqs-event-queue",
+                "com.netflix.conductor:conductor-client"
+            ],
+            "locked": "1.11.1034"
         },
         "com.azure:azure-storage-blob": {
             "firstLevelTransitive": [
@@ -361,7 +369,10 @@
         },
         "com.fasterxml.jackson.core:jackson-annotations": {
             "firstLevelTransitive": [
-                "com.netflix.conductor:conductor-core"
+                "com.netflix.conductor:conductor-core",
+                "com.netflix.conductor:conductor-grpc",
+                "com.netflix.conductor:conductor-grpc-client",
+                "com.netflix.conductor:conductor-grpc-server"
             ],
             "locked": "2.15.2"
         },
@@ -371,6 +382,9 @@
                 "com.netflix.conductor:conductor-common-persistence",
                 "com.netflix.conductor:conductor-core",
                 "com.netflix.conductor:conductor-es7-persistence",
+                "com.netflix.conductor:conductor-grpc",
+                "com.netflix.conductor:conductor-grpc-client",
+                "com.netflix.conductor:conductor-grpc-server",
                 "com.netflix.conductor:conductor-mysql-persistence",
                 "com.netflix.conductor:conductor-postgres-persistence"
             ],
@@ -382,6 +396,9 @@
                 "com.netflix.conductor:conductor-common-persistence",
                 "com.netflix.conductor:conductor-core",
                 "com.netflix.conductor:conductor-es7-persistence",
+                "com.netflix.conductor:conductor-grpc",
+                "com.netflix.conductor:conductor-grpc-client",
+                "com.netflix.conductor:conductor-grpc-server",
                 "com.netflix.conductor:conductor-mysql-persistence",
                 "com.netflix.conductor:conductor-postgres-persistence"
             ],
@@ -784,12 +801,6 @@
                 "com.netflix.conductor:conductor-nats-streaming"
             ],
             "locked": "2.15.6"
-        },
-        "io.orkes.queues:orkes-conductor-queues": {
-            "firstLevelTransitive": [
-                "com.netflix.conductor:conductor-server"
-            ],
-            "locked": "1.0.7"
         },
         "io.prometheus:simpleclient": {
             "firstLevelTransitive": [
