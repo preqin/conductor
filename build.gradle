@@ -18,7 +18,7 @@ plugins {
     id 'java'
     id 'application'
     id 'jacoco'
-    id 'nebula.netflixoss' version '10.6.0'
+    id 'nebula.netflixoss' version '10.6.0' apply false
 }
 
 /*
@@ -45,7 +45,10 @@ apply from: "$rootDir/dependencies.gradle"
 apply from: "$rootDir/springboot-bom-overrides.gradle"
 
 allprojects {
-    apply plugin: 'nebula.netflixoss'
+    if (!project.hasProperty("disableNebulaPlugin") || !disableNebulaPlugin.toBoolean()) {
+        apply plugin: 'nebula.netflixoss'
+    }
+
     apply plugin: 'io.spring.dependency-management'
     apply plugin: 'java-library'
     apply plugin: 'project-report'
