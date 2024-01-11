@@ -65,6 +65,9 @@ RUN rm -rf ./*
 COPY --from=ui-builder /conductor/ui/build .
 COPY --from=ui-builder /conductor/docker/server/nginx/nginx.conf /etc/nginx/http.d/default.conf
 
+# Redirect access and error logs to stdout/stderr respectively
+RUN ln -sf /dev/stdout /var/log/nginx/access.log && ln -sf /dev/stderr /var/log/nginx/error.log
+
 # Copy the files for the server into the app folders
 RUN chmod +x /app/startup.sh
 
