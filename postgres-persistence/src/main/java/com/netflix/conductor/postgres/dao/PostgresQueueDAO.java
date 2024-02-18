@@ -422,19 +422,17 @@ public class PostgresQueueDAO extends PostgresBaseDAO implements QueueDAO {
                 q -> q.addParameter(queueName).addParameter(messageId).executeDelete());
     }
 
-    private List<Message> popMessages(
-            Connection connection, String queueName, int count, int timeout) {
+    private List<Message> peekMessages(Connection connection, String queueName, int count) {
+        if (count < 1) {
+            return Collections.emptyList();
+        }
 
-        String POP_QUERY =
-                "UPDATE queue_message SET popped = true WHERE message_id IN ("
-                        + "SELECT message_id FROM queue_message WHERE queue_name = ? AND popped = false AND "
-                        + "deliver_on <= (current_timestamp + (1000 ||' microseconds')::interval) "
-                        + "ORDER BY priority DESC, deliver_on, created_on LIMIT ? FOR UPDATE SKIP LOCKED"
-                        + ") RETURNING message_id, priority, payload";
+        final String PEEK_MESSAGES =
+                "SELECT message_id, priority, payload FROM queue_message WHERE queue_name = ? AND popped = false AND deliver_on <= (current_timestamp + (1000 ||' microseconds')::interval) ORDER BY priority DESC, deliver_on, created_on LIMIT ? FOR UPDATE SKIP LOCKED";
 
         return query(
                 connection,
-                POP_QUERY,
+                PEEK_MESSAGES,
                 p ->
                         p.addParameter(queueName)
                                 .addParameter(count)
@@ -450,6 +448,34 @@ public class PostgresQueueDAO extends PostgresBaseDAO implements QueueDAO {
                                             }
                                             return results;
                                         }));
+    }
+
+    private List<Message> popMessages(
+            Connection connection, String queueName, int count, int timeout) {
+        List<Message> messages = peekMessages(connection, queueName, count);
+
+        if (messages.isEmpty()) {
+            return messages;
+        }
+
+        List<Message> poppedMessages = new ArrayList<>();
+        for (Message message : messages) {
+            final String POP_MESSAGE =
+                    "UPDATE queue_message SET popped = true WHERE queue_name = ? AND message_id = ? AND popped = false";
+            int result =
+                    query(
+                            connection,
+                            POP_MESSAGE,
+                            q ->
+                                    q.addParameter(queueName)
+                                            .addParameter(message.getId())
+                                            .executeUpdate());
+
+            if (result == 1) {
+                poppedMessages.add(message);
+            }
+        }
+        return poppedMessages;
     }
 
     @Override
