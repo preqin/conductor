@@ -31,8 +31,8 @@ Refer to the table below for various supported backend and required configuratio
 > | cassandra  | conductor.db.type=cassandra        |    
 >
 
-Conductor using Elasticsearch for indexing the workflow data.  
-Currently, Elasticsearch 6 and 7 are supported.
+Conductor is using Elasticsearch or OpenSearch for indexing the workflow data.  
+Currently, Elasticsearch 6, 7 and OpenSearch 2.18 are supported.
 
 We welcome community contributions for other indexing backends.
 
@@ -49,6 +49,7 @@ TODO: Link to the helm charts
 | [docker-compose.yaml](docker-compose.yaml)                   | Redis + Elasticsearch 7    |
 | [docker-compose-postgres.yaml](docker-compose-postgres.yaml) | Postgres + Elasticsearch 7 |
 | [docker-compose-mysql.yaml](docker-compose-mysql.yaml)    | Mysql + Elasticsearch 7    |
+| [docker-compose-redis-os.yaml](docker-compose-redis-os.yaml)    | Redis + OpenSearch 2.18    |
 
 ### Network errors during UI build with yarn
 
@@ -81,5 +82,5 @@ YARN_OPTS='--network-timeout 10000000' docker compose -f docker-compose.yaml up
 When building a Docker image using `docker`, you must call it like e.g.
 
 ```
-docker build --build-arg='YARN_OPTS=--network-timeout 10000000' .. -f server/Dockerfile -t oss-conductor:v3.21.4
+docker build --build-arg='YARN_OPTS=--network-timeout 10000000' .. -f server/Dockerfile -t oss-conductor:v3.21.9
 ```

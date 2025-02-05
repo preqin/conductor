@@ -31,20 +31,20 @@ class WorkflowBulkResource {
         this.client = client;
     }
 
-    BulkResponse pauseWorkflows(List<String> workflowIds) {
+    BulkResponse<String> pauseWorkflows(List<String> workflowIds) {
         ConductorClientRequest request = ConductorClientRequest.builder()
                 .method(Method.PUT)
                 .path("/workflow/bulk/pause")
                 .body(workflowIds)
                 .build();
 
-        ConductorClientResponse<BulkResponse> resp = client.execute(request, new TypeReference<>() {
+        ConductorClientResponse<BulkResponse<String>> resp = client.execute(request, new TypeReference<>() {
         });
 
         return resp.getData();
     }
 
-    BulkResponse restartWorkflows(List<String> workflowIds, Boolean useLatestDefinitions) {
+    BulkResponse<String> restartWorkflows(List<String> workflowIds, Boolean useLatestDefinitions) {
         ConductorClientRequest request = ConductorClientRequest.builder()
                 .method(Method.POST)
                 .path("/workflow/bulk/restart")
@@ -52,39 +52,39 @@ class WorkflowBulkResource {
                 .body(workflowIds)
                 .build();
 
-        ConductorClientResponse<BulkResponse> resp = client.execute(request, new TypeReference<>() {
+        ConductorClientResponse<BulkResponse<String>> resp = client.execute(request, new TypeReference<>() {
         });
 
         return resp.getData();
     }
 
-    BulkResponse resumeWorkflows(List<String> workflowIds) {
+    BulkResponse<String> resumeWorkflows(List<String> workflowIds) {
         ConductorClientRequest request = ConductorClientRequest.builder()
                 .method(Method.PUT)
                 .path("/workflow/bulk/resume")
                 .body(workflowIds)
                 .build();
 
-        ConductorClientResponse<BulkResponse> resp = client.execute(request, new TypeReference<>() {
+        ConductorClientResponse<BulkResponse<String>> resp = client.execute(request, new TypeReference<>() {
         });
 
         return resp.getData();
     }
 
-    BulkResponse retryWorkflows(List<String> workflowIds) {
+    BulkResponse<String> retryWorkflows(List<String> workflowIds) {
         ConductorClientRequest request = ConductorClientRequest.builder()
                 .method(Method.POST)
                 .path("/workflow/bulk/retry")
                 .body(workflowIds)
                 .build();
 
-        ConductorClientResponse<BulkResponse> resp = client.execute(request, new TypeReference<>() {
+        ConductorClientResponse<BulkResponse<String>> resp = client.execute(request, new TypeReference<>() {
         });
 
         return resp.getData();
     }
 
-    public BulkResponse terminateWorkflows(List<String> workflowIds, String reason, boolean triggerFailureWorkflow) {
+    public BulkResponse<String> terminateWorkflows(List<String> workflowIds, String reason, boolean triggerFailureWorkflow) {
         ConductorClientRequest request = ConductorClientRequest.builder()
                 .method(Method.POST)
                 .path("/workflow/bulk/terminate")
@@ -93,7 +93,7 @@ class WorkflowBulkResource {
                 .body(workflowIds)
                 .build();
 
-        ConductorClientResponse<BulkResponse> resp = client.execute(request, new TypeReference<>() {
+        ConductorClientResponse<BulkResponse<String>> resp = client.execute(request, new TypeReference<>() {
         });
 
         return resp.getData();

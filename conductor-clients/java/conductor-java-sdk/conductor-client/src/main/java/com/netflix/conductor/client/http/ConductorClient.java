@@ -101,6 +101,10 @@ public class ConductorClient {
             okHttpBuilder.writeTimeout(builder.writeTimeout, TimeUnit.MILLISECONDS);
         }
 
+        if (builder.callTimeout > -1) {
+            okHttpBuilder.callTimeout(builder.callTimeout, TimeUnit.MILLISECONDS);
+        }
+
         if (builder.proxy != null) {
             okHttpBuilder.proxy(builder.proxy);
         }
@@ -442,10 +446,13 @@ public class ConductorClient {
         private long connectTimeout = -1;
         private long readTimeout = -1;
         private long writeTimeout = -1;
+        private long callTimeout = -1;
         private Proxy proxy;
         private ConnectionPoolConfig connectionPoolConfig;
         private Supplier<ObjectMapper> objectMapperSupplier = () -> new ObjectMapperProvider().getObjectMapper();
         private final List<HeaderSupplier> headerSuppliers = new ArrayList<>();
+
+        private boolean useEnvVariables = false;
 
         protected T self() {
             //noinspection unchecked
@@ -484,6 +491,11 @@ public class ConductorClient {
 
         public T writeTimeout(long writeTimeout) {
             this.writeTimeout = writeTimeout;
+            return self();
+        }
+
+        public T callTimeout(long callTimeout) {
+            this.callTimeout = callTimeout;
             return self();
         }
 
@@ -528,7 +540,19 @@ public class ConductorClient {
             return headerSuppliers;
         }
 
+        public T useEnvVariables(boolean useEnvVariables) {
+            this.useEnvVariables = useEnvVariables;
+            return self();
+        }
+
+        protected boolean isUseEnvVariables() {
+            return this.useEnvVariables;
+        }
+
         public ConductorClient build() {
+            if (useEnvVariables) {
+                applyEnvVariables();
+            }
             return new ConductorClient(this);
         }
 
@@ -539,6 +563,15 @@ public class ConductorClient {
 
             if (basePath.endsWith("/")) {
                 basePath = basePath.substring(0, basePath.length() - 1);
+            }
+        }
+
+        protected void applyEnvVariables() {
+            String conductorServerUrl = System.getenv("CONDUCTOR_SERVER_URL");
+            if (conductorServerUrl != null) {
+                this.basePath(conductorServerUrl);
+            } else {
+                throw new RuntimeException("env variable CONDUCTOR_SERVER_URL is not set");
             }
         }
     }
