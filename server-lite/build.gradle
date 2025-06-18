@@ -34,19 +34,10 @@ dependencies {
 
 
     //Persistence
-    implementation project(':conductor-redis-persistence')
-    implementation project(':conductor-cassandra-persistence')
-    implementation project(':conductor-postgres-persistence')
-    implementation project(':conductor-mysql-persistence')
     implementation project(':conductor-sqlite-persistence')
 
-    //Indexing (note: Elasticsearch 6 is deprecated)
-    implementation project(':conductor-os-persistence')
-    implementation project(':conductor-es7-persistence')
 
 
-    implementation project(':conductor-redis-lock')
-    implementation project(':conductor-redis-concurrency-limit')
 
     //System Tasks
     implementation project(':conductor-http-task')
@@ -69,6 +60,7 @@ dependencies {
     implementation 'org.apache.logging.log4j:log4j-web'
     implementation "redis.clients:jedis:${revJedis}"
     implementation "org.postgresql:postgresql:${revPostgres}"
+    implementation "org.apache.lucene:lucene-core:${revApacheLucene}"
 
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation ("io.orkes.queues:orkes-conductor-queues:${revOrkesQueues}") {
@@ -79,7 +71,6 @@ dependencies {
 
 
     runtimeOnly "org.glassfish.jaxb:jaxb-runtime:${revJAXB}"
-    runtimeOnly "com.amazonaws:aws-java-sdk-sts:${revAwsSdk}"
 
     testImplementation project(':conductor-rest')
     testImplementation project(':conductor-common')
@@ -94,8 +85,8 @@ jar {
 }
 
 bootJar {
-    mainClass = 'com.netflix.conductor.Conductor'
-    archiveClassifier = 'boot'
+    mainClass = 'org.conductoross.conductor.Conductor'
+    archiveClassifier = 'standalone'
 }
 
 publishing {
