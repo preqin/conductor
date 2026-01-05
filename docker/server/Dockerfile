@@ -4,7 +4,7 @@
 # ===========================================================================================================
 # 0. Builder stage 1
 # ===========================================================================================================
-FROM eclipse-temurin:17-jdk AS builder
+FROM azul/zulu-openjdk-debian:17 AS builder
 
 LABEL maintainer="Orkes OSS <oss@orkes.io>"
 
